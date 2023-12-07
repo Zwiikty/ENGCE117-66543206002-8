@@ -10,7 +10,7 @@ int main() {
 	for(i = 1; i <= n; i++) {
 	    printf("%d ",i);
 	}
-//1'st state
+	//1'st state
 	printf("\n\tOdd/Even/Normal number (o/e/n) : ");
 	while(1) {
     scanf("%c", &mode);
