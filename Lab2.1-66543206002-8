@@ -1,0 +1,28 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+void reverse(char str1[], char str2[]);
+
+int main() {
+    char text[50] = "I love You";
+    char out[50];
+    reverse(text, out);
+
+    return 0;
+}
+
+void reverse( char str1[], char str2[] ) {
+    printf("Input\t\t\tOutput\n");
+    for(int i = 0; i < 50; i++) {
+        if( str1[i] != '\0') {
+            printf("%c", str1[i]);
+        }
+    }
+    printf("\t\t");
+    for(int i = 49; i >= 0; i--) {
+        if ( str1[i] != '\0') {
+            printf("%c", str1[i]);
+        }
+        
+    }
+}
