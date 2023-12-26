@@ -22,7 +22,9 @@ void reverse( char str1[], char str2[] ) {
     for(int i = 49; i >= 0; i--) {
         if ( str1[i] != '\0') {
             printf("%c", str1[i]);
+            for (int j = 0; j < 50; j++) {
+                str2[j] = str1[i];
+            }
         }
-        
     }
 }
