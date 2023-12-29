@@ -10,7 +10,7 @@ int main() {
 }
 
 void reverse( char str1[], char str2[]) {
-    int j,numb = 0;
+    int j, numb = 0;
     printf("Input\t\t\tOutput\n");
     printf("%s", str1);
     printf("\t\t");
