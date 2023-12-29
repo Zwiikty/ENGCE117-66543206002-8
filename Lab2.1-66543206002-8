@@ -1,30 +1,26 @@
 // Online C compiler to run C program online
 #include <stdio.h>
 
-void reverse(char str1[], char str2[]);
+void reverse( char str1[], char str2[] ) ;
 
 int main() {
-    char text[50] = "I love You";
-    char out[50];
-    reverse(text, out);
-
-    return 0;
+    char text[ 50 ] = "I Love You" ;
+    char out[ 50 ] ;
+    reverse( text, out ) ;
 }
 
-void reverse( char str1[], char str2[] ) {
+void reverse( char str1[], char str2[]) {
+    int j,numb = 0;
     printf("Input\t\t\tOutput\n");
-    for(int i = 0; i < 50; i++) {
-        if( str1[i] != '\0') {
-            printf("%c", str1[i]);
-        }
-    }
+    printf("%s", str1);
     printf("\t\t");
-    for(int i = 49; i >= 0; i--) {
-        if ( str1[i] != '\0') {
-            printf("%c", str1[i]);
-            for (int j = 0; j < 50; j++) {
-                str2[j] = str1[i];
-            }
-        }
+    while(str1[numb] != '\0') {
+        numb++;
     }
+    j = numb - 1;
+    for (int i = 0; i < numb; i++) {
+        str2[i] = str1[j];
+        j--;
+    }
+    printf("%s", str2);
 }
