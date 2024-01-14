@@ -1,5 +1,5 @@
 #include <stdio.h>
-void GetAns(int firstnum[], int Secondnum[], char *Op, int Ans[]);
+void GetAns( int firstnum[], int Secondnum[], char *Op, int Ans[] );
 int main() {
   int A[6], B[6], Answer[7];
   char Operator[1];
@@ -32,7 +32,7 @@ int main() {
   scanf( "%d", &B[5] );
   printf( "\tOperator : " );
   scanf( "%s", &Operator );
-  GetAns(A, B, Operator, Answer);
+  GetAns( A, B, Operator, Answer );
   //output
   printf( "\n\n\tIndex\t\t x\t 0\t 1\t 2\t 3\t 4\t 5" );
   printf( "\n\n\tNumber A : \t\t %d\t %d\t %d\t %d\t %d\t %d", A[0], A[1], A[2], A[3], A[4], A[5] );
@@ -47,7 +47,7 @@ int main() {
   return 0;
 }
 
-void GetAns(int firstnum[], int Secondnum[], char *Op, int Ans[]){
+void GetAns( int firstnum[], int Secondnum[], char *Op, int Ans[] ) {
   
   //decision
   switch ( *Op ) {
