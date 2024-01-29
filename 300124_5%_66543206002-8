@@ -1,6 +1,5 @@
-
 #include <stdio.h>
-#include <stdlib.h>
+
 struct Node {
     int data;
     struct Node* next;
@@ -10,12 +9,12 @@ struct Node {
 void createList(struct Node** start_ref, int data) {
     struct Node* new_node = (struct Node*)malloc(sizeof(struct Node));
     new_node->data = data;
-    new_node->next = (*start_ref);
+    new_node->next = *start_ref;
     new_node->prev = NULL;
-    if ((*start_ref) != NULL) {
+    if (*start_ref != NULL) {
        (*start_ref)->prev = new_node; 
     }
-    (*start_ref) = new_node;
+    *start_ref = new_node;
 }
 
 void displayList(struct Node* node) {
@@ -32,13 +31,14 @@ void swapNodes(struct Node** head_ref, int First_num, int Second_num) {
         return;
     }
 
-    struct Node *prev_Firstnum = NULL, *curr_Firstnum = (*head_ref);
+    struct Node *prev_Firstnum = NULL, *curr_Firstnum = *head_ref;
+
     while (curr_Firstnum && curr_Firstnum->data != First_num) {
         prev_Firstnum = curr_Firstnum;
         curr_Firstnum = curr_Firstnum->next;
     }
 
-    struct Node *prev_Secondnum = NULL, *curr_Secondnum = (*head_ref);
+    struct Node *prev_Secondnum = NULL, *curr_Secondnum = *head_ref;
     while (curr_Secondnum && curr_Secondnum->data != Second_num) {
         prev_Secondnum = curr_Secondnum;
         curr_Secondnum = curr_Secondnum->next;
@@ -51,13 +51,13 @@ void swapNodes(struct Node** head_ref, int First_num, int Second_num) {
     if (prev_Firstnum != NULL) {
         prev_Firstnum->next = curr_Secondnum;
     }else {
-        (*head_ref) = curr_Secondnum;  
+        *head_ref = curr_Secondnum;  
     }
         
     if (prev_Secondnum != NULL) {
         prev_Secondnum->next = curr_Firstnum;
     }else {
-        (*head_ref) = curr_Firstnum;
+        *head_ref = curr_Firstnum;
     }
 
     struct Node* temp = curr_Secondnum->prev;
