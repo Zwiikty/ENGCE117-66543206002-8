@@ -1,5 +1,6 @@
-#include <stdio.h>
 
+#include <stdio.h>
+#include <stdlib.h>
 struct Node {
     int data;
     struct Node* next;
@@ -80,12 +81,14 @@ int main() {
     }
     printf("Current Linked list : ");
     displayList(start);
+    printf("\n\t======================");
     int A_pos , B_pos;
     printf("\nEnter first number to swap : ");
     scanf("%d", &A_pos);
     printf("\nEnter secondary number to swap : ");
     scanf("%d", &B_pos);
     printf("\nSwapping...");
+    printf("\n\t======================");
     swapNodes(&start, A_pos, B_pos);
     printf("\nNew Linked list : ");
     displayList(start);
