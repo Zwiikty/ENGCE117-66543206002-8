@@ -6,10 +6,13 @@ struct Node {
     struct Node* prev;
 };
 
+
+
 void createList(struct Node** start_ref, int data) {
     struct Node* new_node = (struct Node*)malloc(sizeof(struct Node));
     new_node->data = data;
     new_node->next = *start_ref;
+
     new_node->prev = NULL;
     if (*start_ref != NULL) {
        (*start_ref)->prev = new_node; 
@@ -20,7 +23,7 @@ void createList(struct Node** start_ref, int data) {
 void displayList(struct Node* node) {
     struct Node* last;
     while (node != NULL) {
-        printf(" %d ", node->data);
+        printf("Address :%d , data : %d \n",node , node->data);
         last = node;
         node = node->next;
     }
@@ -32,7 +35,7 @@ void swapNodes(struct Node** head_ref, int First_num, int Second_num) {
     }
 
     struct Node *prev_Firstnum = NULL, *curr_Firstnum = *head_ref;
-
+    
     while (curr_Firstnum && curr_Firstnum->data != First_num) {
         prev_Firstnum = curr_Firstnum;
         curr_Firstnum = curr_Firstnum->next;
@@ -72,6 +75,7 @@ int main() {
     struct Node* start = NULL;
     struct Node* data = NULL;
     int count_node;
+    
     printf("Enter number of node : ");
     scanf("%d", &count_node);
     printf("Enter data in node : ");
@@ -79,7 +83,7 @@ int main() {
         scanf("%d", &data);
         createList(&start, data);
     }
-    printf("Current Linked list : ");
+    printf("Current Linked list : \n");
     displayList(start);
     printf("\n\t======================");
     int A_pos , B_pos;
@@ -90,7 +94,7 @@ int main() {
     printf("\nSwapping...");
     printf("\n\t======================");
     swapNodes(&start, A_pos, B_pos);
-    printf("\nNew Linked list : ");
+    printf("\nNew Linked list : \n");
     displayList(start);
 
     return 0;
